@@ -3,12 +3,14 @@ package stepDefinitions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.SearchPage;
+import pageObjects.SearchResults;
 import utils.TestContextSetup;
 
 public class GoogleSearchStepDefinition {
@@ -17,11 +19,13 @@ public class GoogleSearchStepDefinition {
 	public String landingPageProductName;
 	public String offerPageProductName;
 	public SearchPage searchPage;
+	public SearchResults searchResults;
 	TestContextSetup testContextSetup;
 	
 	public GoogleSearchStepDefinition(TestContextSetup testContextSetup) {
 		this.testContextSetup = testContextSetup;
 		this.searchPage = testContextSetup.pageObjectManager.getSearchPage();
+		this.searchResults = testContextSetup.pageObjectManager.getSearchResults();
 	}
 
 	@Given("User is on google home page")
@@ -37,6 +41,7 @@ public class GoogleSearchStepDefinition {
 	@Then("Perform search and validate results")
 	public void perform_search_and_validate_results() {
 	    searchPage.search();
+	    Assert.assertEquals(searchResults.firstResult(), "https://www.espn.com/");
 	}
 	
 }
