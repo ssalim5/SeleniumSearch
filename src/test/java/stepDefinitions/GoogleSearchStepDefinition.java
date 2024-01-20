@@ -38,8 +38,8 @@ public class GoogleSearchStepDefinition {
 	public void user_enters_query_into_search_bar_and_clicks_search(String query) {
 	    searchPage.enterSearchQuery(query);
 	}
-	@Then("Perform search and validate results")
-	public void perform_search_and_validate_results() {
+	@Then("^Perform search and validate result for (.+)$")
+	public void perform_search_and_validate_results(String query) {
 	    searchPage.search();
 	    Assert.assertEquals(searchResults.firstResult(), "https://www.espn.com/");
 	}
