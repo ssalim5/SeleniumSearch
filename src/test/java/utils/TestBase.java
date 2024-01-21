@@ -30,7 +30,7 @@ public class TestBase {
 			    driver = new ChromeDriver();
 			}
 			if( browser.equalsIgnoreCase("firefox") ) {
-				System.setProperty("webdriver.gecko.driver", "C:\\Users\\sakib\\Documents\\geckodriver.exe");
+				System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\geckodriver.exe");
 				driver = new FirefoxDriver();
 			}
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));

@@ -5,21 +5,21 @@ import org.openqa.selenium.WebDriver;
 public class PageObjectManager {
 	
 	public WebDriver driver;
-	public SearchPage searchPage;
-	public SearchResults searchResults;
+	public GoogleSearchPage googleSearchPage;
+	public GoogleSearchResults googleSearchResults;
 	
 	public PageObjectManager(WebDriver driver) {
 		this.driver = driver;
 	}
 	
-	public SearchPage getSearchPage() {
-		searchPage = new SearchPage(driver);
-		return searchPage;
+	public GoogleSearchPage getSearchPage() {
+		googleSearchPage = new GoogleSearchPage(driver);
+		return googleSearchPage;
 	}
 	
-	public SearchResults getSearchResults() {
-		searchResults = new SearchResults(driver);
-		return searchResults;
+	public GoogleSearchResults getSearchResults() {
+		googleSearchResults = new GoogleSearchResults(driver);
+		return googleSearchResults;
 	}
 	
 }

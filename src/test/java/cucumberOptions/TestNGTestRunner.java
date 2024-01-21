@@ -13,10 +13,10 @@ tags = "@GoogleSearch")
 //"rerun:target/failed_scenarios.txt"})
 public class TestNGTestRunner extends AbstractTestNGCucumberTests{
 
-//	@Override
-//	@DataProvider(parallel=true)
-//	public Object[][] scenarios(){
-//		return super.scenarios();
-//	}
+	@Override
+	@DataProvider(parallel=true)
+	public Object[][] scenarios(){
+		return super.scenarios();
+	}
 	
 }
