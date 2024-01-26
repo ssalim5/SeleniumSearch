@@ -8,7 +8,10 @@ Feature: Use Yahoo search
   Examples: 
   | Query |
   | espn  |
-  | fiserv |
+  | fiserv|
+  | disney|
+  | facebook|
+  |instagram|
  
  	@YahooSearch
   Scenario Outline: Yahoo search using button and validation
@@ -19,7 +22,10 @@ Feature: Use Yahoo search
   Examples: 
   | Query |
   | espn  |
-  | fiserv |
+  | fiserv|
+  | disney|
+  | facebook|
+  |instagram|
   
   @YahooSearch
   Scenario Outline: Yahoo search and link validation
@@ -30,4 +36,7 @@ Feature: Use Yahoo search
   Examples: 
   | Query |
   | espn  |
-  | fiserv |
+  | fiserv|
+  | disney|
+  | facebook|
+  |instagram|

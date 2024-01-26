@@ -7,8 +7,8 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(features="src/test/java/features", glue="stepDefinitions",
 monochrome=true, 
-//tags = "@GoogleSearch")
-tags = "@BingSearch")
+tags = "@GoogleSearch")
+//tags = "@BingSearch")
 //tags = "@YahooSearch")
 
 //plugin= {"html:target/cucumber.html", "json:target/cucumber.json",

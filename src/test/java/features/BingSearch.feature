@@ -8,7 +8,10 @@ Feature: Use Bing search
   Examples: 
   | Query |
   | espn  |
-  | fiserv |
+  | fiserv|
+  | disney|
+  | facebook|
+  |instagram|
   
   @BingSearch
   Scenario Outline: Bing search using button and validation
@@ -19,7 +22,10 @@ Feature: Use Bing search
   Examples: 
   | Query |
   | espn  |
-  | fiserv |
+  | fiserv|
+  | disney|
+  | facebook|
+  |instagram|
   
   @BingSearch
   Scenario Outline: Bing search and link validation
@@ -30,5 +36,8 @@ Feature: Use Bing search
   Examples: 
   | Query |
   | espn  |
-  | fiserv |
+  | fiserv|
+  | disney|
+  | facebook|
+  |instagram|
   

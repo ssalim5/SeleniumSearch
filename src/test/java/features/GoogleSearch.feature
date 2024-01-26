@@ -8,7 +8,10 @@ Feature: Use Google search
   Examples: 
   | Query |
   | espn  |
-  | fiserv |
+  | fiserv|
+  | disney|
+  | facebook|
+  |instagram|
  
  	@GoogleSearch
   Scenario Outline: Google search using button and validation
@@ -19,7 +22,10 @@ Feature: Use Google search
   Examples: 
   | Query |
   | espn  |
-  | fiserv |
+  | fiserv|
+  | disney|
+  | facebook|
+  |instagram|
   
   @GoogleSearch
   Scenario Outline: Google search and link validation
@@ -30,4 +36,7 @@ Feature: Use Google search
   Examples: 
   | Query |
   | espn  |
-  | fiserv |
+  | fiserv|
+  | disney|
+  | facebook|
+  |instagram|
