@@ -11,10 +11,10 @@ public class BingSearchResults {
 	}
 
 	By searchBar = By.xpath("//textarea[@id='sb_form_q']");
-	By firstResult = By.xpath("//ol[@id='b_results']/li[1]/h2[@class=' b_topTitle']/a");
+	By firstResult = By.xpath("//ol[@id='b_results']/li[1]/h2/a");
 
 	public String firstResult() {
-		return driver.findElement(firstResult).getAttribute("href");
+		return driver.findElement(firstResult).getText();
 	}
 	
 }

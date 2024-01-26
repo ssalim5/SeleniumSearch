@@ -34,7 +34,8 @@ public class TestBase {
 			}
 			if( browser.equalsIgnoreCase("firefox") ) {
 //				System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\geckodriver.exe");
-				System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/src/test/resources/geckodriver");
+//				System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/src/test/resources/geckodriver");
+				System.setProperty("webdriver.chrome.driver", "/Users/nusratmomo/Downloads/chromedriver");
 				driver = new FirefoxDriver();
 			}
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));

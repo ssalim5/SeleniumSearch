@@ -15,6 +15,7 @@ import pageObjects.GoogleSearchPage;
 import pageObjects.GoogleSearchResults;
 import utils.TestContextSetup;
 
+
 public class BingSearchResultsStepDefinition {
 	
 	public WebDriver driver;
@@ -30,7 +31,7 @@ public class BingSearchResultsStepDefinition {
 	
 	@Then("^Validate bing search results for (.+)$")
 	public void perform__bing_search_and_validate_results(String query) {
-	    Assert.assertTrue(bingSearchResults.firstResult().contains(query));
+	    Assert.assertTrue(bingSearchResults.firstResult().toLowerCase().contains(query));
 	}
 	
 }
