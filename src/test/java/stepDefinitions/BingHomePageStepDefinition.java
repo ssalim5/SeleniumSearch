@@ -33,10 +33,16 @@ public class BingHomePageStepDefinition {
 		Assert.assertTrue(bingSearchPage.getTitleSearchPage().contains("Bing"));
 	}
 	
+	@When("^User enters (.+) into bing search bar and clicks enter$")
+	public void user_enters_query_into_bing_search_bar_and_clicks_enter(String query) {
+	    bingSearchPage.enterSearchQuery(query);
+	    bingSearchPage.search();
+	}
+	
 	@When("^User enters (.+) into bing search bar and clicks search$")
 	public void user_enters_query_into_bing_search_bar_and_clicks_search(String query) {
 	    bingSearchPage.enterSearchQuery(query);
-	    bingSearchPage.search();
+	    bingSearchPage.clickSearch();
 	}
 	
 }

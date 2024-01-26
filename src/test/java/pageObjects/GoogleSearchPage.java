@@ -32,6 +32,12 @@ public class GoogleSearchPage {
 		w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='search']")));
 	}
 	
+	public void clickSearch() {
+		driver.findElement(searchButton).click();
+		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(5));
+		w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='search']")));
+	}
+	
 	public String getTitleSearchPage() {
 		return driver.getTitle();
 	}

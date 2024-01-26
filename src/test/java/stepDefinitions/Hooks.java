@@ -22,10 +22,10 @@ public class Hooks {
 		this.testContextSetup = testContextSetup;
 	}
 
-	@After
-	public void AfterScenario() throws IOException {
-		testContextSetup.testBase.WebDriverManager().quit();
-	}
+//	@After
+//	public void AfterScenario() throws IOException {
+//		testContextSetup.testBase.WebDriverManager().quit();
+//	}
 	
 	@AfterStep
 	public void AddScreenshot(Scenario scenario) throws IOException
@@ -34,7 +34,7 @@ public class Hooks {
 		if(scenario.isFailed())
 		{
 		//screenshot
-		File sourcePath= 	((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		File sourcePath= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		byte[] fileContent = FileUtils.readFileToByteArray(sourcePath);
 		scenario.attach(fileContent, "image/png", "image");
 		

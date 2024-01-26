@@ -31,10 +31,16 @@ public class GoogleHomePageStepDefinition {
 		Assert.assertTrue(googleSearchPage.getTitleSearchPage().contains("Google"));
 	}
 	
+	@When("^User enters (.+) into google search bar and clicks enter$")
+	public void user_enters_query_into_google_search_bar_and_clicks_enter(String query) {
+	    googleSearchPage.enterSearchQuery(query);
+	    googleSearchPage.search();
+	}
+	
 	@When("^User enters (.+) into google search bar and clicks search$")
 	public void user_enters_query_into_google_search_bar_and_clicks_search(String query) {
 	    googleSearchPage.enterSearchQuery(query);
-	    googleSearchPage.search();
+	    googleSearchPage.clickSearch();
 	}
 	
 }

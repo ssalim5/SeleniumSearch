@@ -18,6 +18,7 @@ public class BingSearchPage {
 
 	By searchBar = By.xpath("//textarea[@id='sb_form_q']");
 	By searchBar2 = By.xpath("//textarea[@type='search']");
+	By searchButton = By.xpath("//label[@id='search_icon']");
 	
 	public void enterSearchQuery(String query) {
 		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -34,6 +35,12 @@ public class BingSearchPage {
 	
 	public void search() {
 		driver.findElement(searchBar).sendKeys(Keys.ENTER);
+		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(5));
+		w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ol[@id='b_results']")));
+	}
+	
+	public void clickSearch() {
+		driver.findElement(searchButton).click();
 		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(5));
 		w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ol[@id='b_results']")));
 	}
