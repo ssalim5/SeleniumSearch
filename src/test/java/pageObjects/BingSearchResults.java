@@ -12,6 +12,8 @@ public class BingSearchResults {
 
 	By searchBar = By.xpath("//textarea[@id='sb_form_q']");
 	By firstResult = By.xpath("//ol[@id='b_results']/li[1]/h2/a");
+	By searchButton = By.xpath("//label[@id='search_icon']");
+
 
 	public String firstResult() {
 		return driver.findElement(firstResult).getText();
