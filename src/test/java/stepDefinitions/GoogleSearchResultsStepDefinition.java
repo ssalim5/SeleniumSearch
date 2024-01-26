@@ -22,12 +22,12 @@ public class GoogleSearchResultsStepDefinition {
 	
 	public GoogleSearchResultsStepDefinition(TestContextSetup testContextSetup) {
 		this.testContextSetup = testContextSetup;
-		this.googleSearchPage = testContextSetup.pageObjectManager.getSearchPage();
-		this.googleSearchResults = testContextSetup.pageObjectManager.getSearchResults();
+		this.googleSearchPage = testContextSetup.pageObjectManager.getGoogleSearchPage();
+		this.googleSearchResults = testContextSetup.pageObjectManager.getGoogleSearchResults();
 	}
 	
-	@Then("^Validate search results for (.+)$")
-	public void perform_search_and_validate_results(String query) {
+	@Then("^Validate google search results for (.+)$")
+	public void perform_google_search_and_validate_results(String query) {
 	    Assert.assertTrue(googleSearchResults.firstResult().contains(query));
 	}
 	

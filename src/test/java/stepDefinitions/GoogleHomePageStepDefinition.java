@@ -22,8 +22,8 @@ public class GoogleHomePageStepDefinition {
 	
 	public GoogleHomePageStepDefinition(TestContextSetup testContextSetup) {
 		this.testContextSetup = testContextSetup;
-		this.googleSearchPage = testContextSetup.pageObjectManager.getSearchPage();
-		this.googleSearchResults = testContextSetup.pageObjectManager.getSearchResults();
+		this.googleSearchPage = testContextSetup.pageObjectManager.getGoogleSearchPage();
+		this.googleSearchResults = testContextSetup.pageObjectManager.getGoogleSearchResults();
 	}
 
 	@Given("User is on google home page")
@@ -31,8 +31,8 @@ public class GoogleHomePageStepDefinition {
 		Assert.assertTrue(googleSearchPage.getTitleSearchPage().contains("Google"));
 	}
 	
-	@When("^User enters (.+) into search bar and clicks search$")
-	public void user_enters_query_into_search_bar_and_clicks_search(String query) {
+	@When("^User enters (.+) into google search bar and clicks search$")
+	public void user_enters_query_into_google_search_bar_and_clicks_search(String query) {
 	    googleSearchPage.enterSearchQuery(query);
 	    googleSearchPage.search();
 	}
