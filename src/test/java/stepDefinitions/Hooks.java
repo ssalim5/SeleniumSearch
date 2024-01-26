@@ -22,10 +22,10 @@ public class Hooks {
 		this.testContextSetup = testContextSetup;
 	}
 
-//	@After
-//	public void AfterScenario() throws IOException {
-//		testContextSetup.testBase.WebDriverManager().quit();
-//	}
+	@After
+	public void AfterScenario() throws IOException {
+		testContextSetup.testBase.WebDriverManager().quit();
+	}
 	
 	@AfterStep
 	public void AddScreenshot(Scenario scenario) throws IOException

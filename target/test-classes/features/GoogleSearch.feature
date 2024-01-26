@@ -20,3 +20,14 @@ Feature: Use Google search
   | Query |
   | espn  |
   | fiserv |
+  
+  @GoogleSearch
+  Scenario Outline: Google search and link validation
+    Given User is on google home page
+    When User enters <Query> into google search bar and clicks enter
+    Then Validate first google result link for <Query>
+
+  Examples: 
+  | Query |
+  | espn  |
+  | fiserv |

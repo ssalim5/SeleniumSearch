@@ -41,7 +41,7 @@ public class BingSearchPage {
 	
 	public void clickSearch() {
 		driver.findElement(searchButton).click();
-		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(20));
 		w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ol[@id='b_results']")));
 	}
 	

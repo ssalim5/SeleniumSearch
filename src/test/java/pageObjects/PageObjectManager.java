@@ -11,6 +11,7 @@ public class PageObjectManager {
 	public BingSearchResults bingSearchResults;
 	public YahooSearchPage yahooSearchPage;
 	public YahooSearchResults yahooSearchResults;
+	public FirstResult firstResult;
 	
 	public PageObjectManager(WebDriver driver) {
 		this.driver = driver;
@@ -44,6 +45,11 @@ public class PageObjectManager {
 	public YahooSearchResults getYahooSearchResults() {
 		yahooSearchResults = new YahooSearchResults(driver);
 		return yahooSearchResults;
+	}
+	
+	public FirstResult getFirstResult() {
+		firstResult = new FirstResult(driver);
+		return firstResult;
 	}
 	
 }

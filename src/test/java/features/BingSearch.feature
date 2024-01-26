@@ -21,3 +21,14 @@ Feature: Use Bing search
   | espn  |
   | fiserv |
   
+  @BingSearch
+  Scenario Outline: Bing search and link validation
+    Given User is on bing home page
+    When User enters <Query> into bing search bar and clicks enter
+    Then Validate first bing result link for <Query>
+
+  Examples: 
+  | Query |
+  | espn  |
+  | fiserv |
+  

@@ -6,7 +6,11 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(features="src/test/java/features", glue="stepDefinitions",
-monochrome=true, tags = "@YahooSearch")
+monochrome=true, 
+//tags = "@GoogleSearch")
+tags = "@BingSearch")
+//tags = "@YahooSearch")
+
 //plugin= {"html:target/cucumber.html", "json:target/cucumber.json",
 //"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 //"rerun:target/failed_scenarios.txt"})

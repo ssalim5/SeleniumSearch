@@ -2,6 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class BingSearchResults {
 	public WebDriver driver;
@@ -11,12 +12,16 @@ public class BingSearchResults {
 	}
 
 	By searchBar = By.xpath("//textarea[@id='sb_form_q']");
-	By firstResult = By.xpath("//ol[@id='b_results']/li[1]/h2/a");
+	By firstResultLink = By.xpath("//h2[1]/a");
 	By searchButton = By.xpath("//label[@id='search_icon']");
 
 
-	public String firstResult() {
-		return driver.findElement(firstResult).getText();
+	public WebElement firstResultLink() {
+		return driver.findElement(firstResultLink);
+	}
+	public void selectFirstResult() {
+		driver.findElement(firstResultLink).click();
+//		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(1));
 	}
 	
 }

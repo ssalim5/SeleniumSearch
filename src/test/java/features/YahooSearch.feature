@@ -20,3 +20,14 @@ Feature: Use Yahoo search
   | Query |
   | espn  |
   | fiserv |
+  
+  @YahooSearch
+  Scenario Outline: Yahoo search and link validation
+    Given User is on yahoo home page
+    When User enters <Query> into yahoo search bar and clicks enter
+    Then Validate first yahoo result link for <Query>
+
+  Examples: 
+  | Query |
+  | espn  |
+  | fiserv |
