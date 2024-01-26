@@ -3,6 +3,7 @@ package stepDefinitions;
 import java.io.File;
 import java.io.IOException;
 
+import org.apache.commons.io.FileUtils;
 //import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -24,6 +25,21 @@ public class Hooks {
 	@After
 	public void AfterScenario() throws IOException {
 		testContextSetup.testBase.WebDriverManager().quit();
+	}
+	
+	@AfterStep
+	public void AddScreenshot(Scenario scenario) throws IOException
+	{
+		WebDriver driver = testContextSetup.testBase.WebDriverManager();
+		if(scenario.isFailed())
+		{
+		//screenshot
+		File sourcePath= 	((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		byte[] fileContent = FileUtils.readFileToByteArray(sourcePath);
+		scenario.attach(fileContent, "image/png", "image");
+		
+		}
+		
 	}
 
 }
